@@ -15,15 +15,15 @@ switch (script) {
   case 'start':
   case 'test': {
     const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : []
-    const scriptPath = require.resolve(
-      `../node_modules/@craco/craco/scripts/${script}`
-    )
+    const scriptPath = require.resolve(`@craco/craco/scripts/${script}`, {
+      paths: ['../node_modules', 'node_modules'],
+    })
     const scriptArgs = args.slice(scriptIndex + 1)
     scriptArgs.push(`--config`)
     scriptArgs.push(
       `${path.resolve(
         process.cwd(),
-        'node_modules/swordsmith/lib/config/cra.config.js'
+        'node_modules/@adrianthewriter/swordsmith/lib/config/cra.config.js'
       )}`
     )
 
