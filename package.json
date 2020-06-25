@@ -1,7 +1,7 @@
 {
   "name": "swordsmith",
   "version": "0.1.0",
-  "description": "A plugin to customize creat-react-app for generating Roll20 character sheets. Uses craco under the hood.",
+  "description": "A package to customize creat-react-app for generating Roll20 character sheets. Uses craco under the hood.",
   "bin": "bin/swordsmith.js",
   "repository": "https://github.com/adrianthewriter/swordsmith.git",
   "author": "Adrian Brooks <adrian@adrianbrooks.com>",
