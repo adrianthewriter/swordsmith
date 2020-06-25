@@ -1,6 +1,6 @@
 {
-  "name": "swordsmith",
-  "version": "0.1.0",
+  "name": "@adrianthewriter/swordsmith",
+  "version": "0.1.4",
   "description": "A package to customize creat-react-app for generating Roll20 character sheets. Uses craco under the hood.",
   "bin": "bin/swordsmith.js",
   "repository": "https://github.com/adrianthewriter/swordsmith.git",
@@ -19,17 +19,17 @@
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-prefix-selector": "^1.7.2",
     "prerender-loader": "^1.3.0",
-    "prettier": "^2.0.5",
     "rollup": "^2.18.0",
     "rollup-plugin-terser": "^6.1.0"
   },
   "peerDependencies": {
+    "@craco/craco": "*",
     "react-scripts": "*"
   },
   "devDependencies": {
+    "prettier": "*",
     "react-scripts": "3.*"
   },
-  "cracoConfig": "lib/config/cra.config.js",
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,
