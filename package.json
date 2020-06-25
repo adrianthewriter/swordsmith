@@ -6,7 +6,9 @@
   "repository": "https://github.com/adrianthewriter/swordsmith.git",
   "author": "Adrian Brooks <adrian@adrianbrooks.com>",
   "license": "MIT",
-  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "dependencies": {
     "@craco/craco": "^5.6.4",
     "@rollup/plugin-json": "^4.1.0",
