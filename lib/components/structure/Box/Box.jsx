@@ -4,7 +4,7 @@ import c from 'classnames'
 
 import styles from './Box.css'
 
-import { Toggle } from '@components'
+import { Toggle } from '../../index.js'
 
 const Box = ({ id, label, hasToggle, isBoxed, ...props }) => (
   <div

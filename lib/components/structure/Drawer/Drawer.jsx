@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 
-import { Toggle } from '@components'
+import { Toggle } from '../../index.js'
 import styles from './Drawer.css'
 
 const Drawer = ({ id, ...props }) => {

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 // This file was modified from '@craco/craco/bin/craco.js'
+const fs = require('fs')
 const path = require('path')
 const spawn = require('cross-spawn')
 
@@ -9,6 +10,10 @@ const scriptIndex = args.findIndex(
   (x) => x === 'build' || x === 'start' || x === 'test'
 )
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex]
+
+const swordsmithPath = fs.existsSync(process.cwd(), 'node_modules/swordsmith')
+  ? path.resolve(process.cwd(), 'node_modules/swordsmith')
+  : path.resolve(process.cwd(), 'node_modules/@adrianthewriter/swordsmith')
 
 switch (script) {
   case 'build':
@@ -21,10 +26,7 @@ switch (script) {
     const scriptArgs = args.slice(scriptIndex + 1)
     scriptArgs.push(`--config`)
     scriptArgs.push(
-      `${path.resolve(
-        process.cwd(),
-        'node_modules/@adrianthewriter/swordsmith/lib/config/cra.config.js'
-      )}`
+      `${path.resolve(swordsmithPath, './lib/config/cra.config.js')}`
     )
 
     const processArgs = nodeArgs.concat(scriptPath).concat(scriptArgs)

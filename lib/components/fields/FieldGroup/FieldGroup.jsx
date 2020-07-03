@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 
-import { Field, Button } from '@components'
+import { Field, Button } from '../../index.js'
 import styles from './FieldGroup.css'
 
 const InnerField = ({ groupId, index, id, label, roll, ...props }) => {
