@@ -6,10 +6,10 @@
   /* Hide actual radio */
   & input[type='radio'] {
     opacity: 0;
-    width: calc(var(--base-size) / 2);
-    height: calc(var(--base-size) / 2);
-    margin: calc(var(--base-size) / 4) 0;
-    margin-right: calc(var(--base-size) / -2);
+    width: calc(var(--base-size, 22px) / 2);
+    height: calc(var(--base-size, 22px) / 2);
+    margin: calc(var(--base-size, 22px) / 4) 0;
+    margin-right: calc(var(--base-size, 22px) / -2);
 
     cursor: pointer;
   }
@@ -19,20 +19,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(var(--base-size) / 2);
-    height: calc(var(--base-size) / 2);
-    margin: calc(var(--base-size) / 4) 0;
+    width: calc(var(--base-size, 22px) / 2);
+    height: calc(var(--base-size, 22px) / 2);
+    margin: calc(var(--base-size, 22px) / 4) 0;
     margin-right: 3px;
 
     color: transparent;
-    font: 9px var(--font-mono);
+    font: 9px var(--font-mono, monospace);
 
-    border: var(--border-primary);
+    border: var(--border-primary, 1px solid black);
     background: black;
   }
 
   & input[type='radio'] + span:last-child {
-    margin: calc(var(--base-size) / 4) 0;
+    margin: calc(var(--base-size, 22px) / 4) 0;
     margin-right: 0;
   }
 

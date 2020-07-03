@@ -31,7 +31,7 @@ textarea.field {
   all: unset;
   flex: 1;
   width: stretch;
-  height: var(--base-size);
+  height: var(--base-size, 22px);
 
   &:hover,
   &:focus,

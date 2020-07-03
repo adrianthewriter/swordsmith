@@ -7,7 +7,7 @@
   width: stretch;
   height: fit-content;
 
-  /* border: var(--border-strong); */
+  /* border: var(--border-strong, 2px solid black); */
 
   & .field {
     display: flex;
@@ -17,30 +17,30 @@
     margin: 0;
     padding: 0;
 
-    border-top: var(--border-strong);
-    border-bottom: var(--border-strong);
-    border-right: var(--border-primary);
+    border-top: var(--border-strong, 2px solid black);
+    border-bottom: var(--border-strong, 2px solid black);
+    border-right: var(--border-primary, 1px solid black);
 
     &:first-child,
     &.start {
-      border-left: var(--border-strong);
+      border-left: var(--border-strong, 2px solid black);
     }
     &:last-child,
     &.end {
-      border-right: var(--border-strong);
+      border-right: var(--border-strong, 2px solid black);
     }
 
     &.start {
-      margin-left: var(--gap-size);
+      margin-left: var(--gap-size, 6px);
     }
 
     & input[type='text'] {
       all: unset;
       width: stretch;
-      height: calc(var(--base-size) * 2);
+      height: calc(var(--base-size, 22px) * 1.5);
 
       text-align: center;
-      border-bottom: var(--border-secondary);
+      border-bottom: var(--border-secondary, 1px dashed black);
 
       &:hover,
       &:focus,
@@ -52,7 +52,7 @@
 
     & button[type='roll'] {
       width: stretch;
-      height: var(--base-size);
+      height: var(--base-size, 22px);
       justify-content: center;
     }
 
@@ -61,7 +61,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: var(--base-size);
+      height: var(--base-size, 22px);
     }
 
     & span::after {

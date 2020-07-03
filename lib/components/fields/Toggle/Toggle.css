@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row nowrap;
   width: fit-content;
-  height: var(--base-size);
+  height: var(--base-size, 22px);
   margin: 0;
   padding: 0;
 
@@ -27,7 +27,7 @@
       height: 100%;
 
       color: inherit;
-      font: 14px var(--font-body);
+      font: 14px var(--font-body, sans-serif);
 
       cursor: pointer;
     }
@@ -42,7 +42,7 @@
       height: stretch;
       margin-right: 3px;
 
-      font: 16px var(--font-body);
+      font: 16px var(--font-body, sans-serif);
       text-transform: none;
     }
 
@@ -59,7 +59,7 @@
 }
 
 .collapse {
-  width: var(--base-size);
+  width: var(--base-size, 22px);
 
   & input[type='checkbox'] {
     & + span::before,
@@ -70,9 +70,9 @@
     & + span::after,
     &:checked + span::after {
       content: '−';
-      width: var(--base-size);
+      width: var(--base-size, 22px);
       margin-right: 0;
-      font: 20px var(--font-mono);
+      font: 20px var(--font-mono, monospace);
     }
 
     &:checked + span::after {

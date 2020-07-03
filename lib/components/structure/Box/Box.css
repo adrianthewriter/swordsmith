@@ -1,12 +1,12 @@
 .box {
-  margin-bottom: var(--gap-size);
+  margin-bottom: var(--gap-size, 6px);
   width: stretch;
 
   & h2 {
     display: flex;
     justify-content: space-between;
     width: stretch;
-    height: var(--base-size);
+    height: var(--base-size, 22px);
 
     color: white;
     background: black;
@@ -24,7 +24,7 @@
     padding-top: 6px;
 
     & > * {
-      margin-bottom: var(--gap-size) !important;
+      margin-bottom: var(--gap-size, 6px) !important;
     }
 
     & > :last-child {
@@ -43,7 +43,7 @@
 }
 
 .box.isboxed {
-  border: var(--border-strong);
+  border: var(--border-strong, 2px solid black);
 
   & .boxcontent {
     padding: 6px;

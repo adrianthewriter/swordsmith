@@ -8,5 +8,5 @@
   flex-flow: column nowrap;
   justify-content: center;
   width: stretch;
-  min-height: var(--base-size);
+  min-height: var(--base-size, 22px);
 }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   width: fit-content;
-  height: var(--base-size);
+  height: var(--base-size, 22px);
   color: black;
   cursor: pointer;
 
@@ -51,18 +51,18 @@ button[type='roll'].button {
   flex-flow: row-reverse nowrap;
   flex-direction: flex-start;
   width: fit-content;
-  min-width: var(--base-size);
-  height: var(--base-size);
+  min-width: var(--base-size, 22px);
+  height: var(--base-size, 22px);
   overflow: hidden;
 
-  border: var(--border-primary);
+  border: var(--border-primary, 1px solid black);
   border-radius: 3px;
   background: #eee;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
 
   &::after {
     display: flex;
-    width: var(--base-size);
+    width: var(--base-size, 22px);
     height: stretch;
     padding: 0;
     align-items: center;
@@ -80,11 +80,11 @@ button[type='roll'].button {
 
   &:active {
     margin-top: 3px;
-    height: calc(var(--base-size) - 3px);
+    height: calc(var(--base-size, 22px) - 3px);
     box-shadow: inset 0 -0.1em 0 -0.35em rgba(0, 0, 0, 0.1);
 
     & span {
-      line-height: calc(var(--base-size) - 3px);
+      line-height: calc(var(--base-size, 22px) - 3px);
     }
   }
 
