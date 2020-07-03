@@ -3,6 +3,7 @@
   "version": "0.1.10",
   "description": "A package to customize creat-react-app for generating Roll20 character sheets. Uses craco under the hood.",
   "bin": "bin/swordsmith.js",
+  "main": "index.js",
   "repository": "https://github.com/adrianthewriter/swordsmith.git",
   "author": "Adrian Brooks <adrian@adrianbrooks.com>",
   "license": "MIT",
@@ -10,6 +11,8 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "@craco/craco": "^5.6.4",
     "@rollup/plugin-json": "^4.1.0",
     "change-case": "^4.1.1",

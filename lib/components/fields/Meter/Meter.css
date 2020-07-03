@@ -1,0 +1,80 @@
+.meter {
+  display: flex;
+  flex-flow: row nowrap;
+  width: fit-content;
+
+  /* Hide actual radio */
+  & input[type='radio'] {
+    opacity: 0;
+    width: calc(var(--base-size) / 2);
+    height: calc(var(--base-size) / 2);
+    margin: calc(var(--base-size) / 4) 0;
+    margin-right: calc(var(--base-size) / -2);
+
+    cursor: pointer;
+  }
+
+  /* Fake radio */
+  & input[type='radio'] + span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--base-size) / 2);
+    height: calc(var(--base-size) / 2);
+    margin: calc(var(--base-size) / 4) 0;
+    margin-right: 3px;
+
+    color: transparent;
+    font: 9px var(--font-mono);
+
+    border: var(--border-primary);
+    background: black;
+  }
+
+  & input[type='radio'] + span:last-child {
+    margin: calc(var(--base-size) / 4) 0;
+    margin-right: 0;
+  }
+
+  /* Remove dot from all radios _after_ selected one */
+  & input[type='radio']:checked ~ input[type='radio'] + span {
+    color: transparent;
+    background: white;
+  }
+
+  /* Styles for 'clear' box */
+  & input[type='radio'] + .clear {
+    color: transparent;
+    background: white;
+    border: 1px dashed lightgray;
+  }
+
+  & input[type='radio']:hover + .clear {
+    background: #eee;
+  }
+}
+
+/* Hover effects */
+.meter:hover {
+  & input[type='radio'] + span {
+    color: grey !important;
+    transition: color 300ms ease;
+  }
+
+  & input[type='radio']:checked ~ span:not(.clear),
+  & input[type='radio']:checked ~ input[type='radio']:hover + span:not(.clear) {
+    background: var(--field-hover-color);
+    transition: background-color 300ms ease;
+  }
+
+  & input[type='radio']:checked + span:not(.clear),
+  & input[type='radio']:checked:hover + span:not(.clear) {
+    background: black;
+  }
+
+  & input[type='radio']:hover ~ input[type='radio']:checked ~ input + span,
+  & input[type='radio']:checked ~ input[type='radio']:hover ~ span,
+  & input[type='radio']:checked:hover ~ span {
+    background: white;
+  }
+}

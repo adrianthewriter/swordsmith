@@ -1,0 +1,51 @@
+.box {
+  margin-bottom: var(--gap-size);
+  width: stretch;
+
+  & h2 {
+    display: flex;
+    justify-content: space-between;
+    width: stretch;
+    height: var(--base-size);
+
+    color: white;
+    background: black;
+
+    & span {
+      padding: 0 6px;
+    }
+
+    & .toggle {
+      color: white;
+    }
+  }
+
+  & .boxcontent {
+    padding-top: 6px;
+
+    & > * {
+      margin-bottom: var(--gap-size) !important;
+    }
+
+    & > :last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /* Toggle Box Content */
+  & .toggle ~ .boxcontent {
+    display: block;
+  }
+
+  & .toggle[value='hidden'] ~ .boxcontent {
+    display: none;
+  }
+}
+
+.box.isboxed {
+  border: var(--border-strong);
+
+  & .boxcontent {
+    padding: 6px;
+  }
+}

@@ -1,0 +1,71 @@
+.fieldgroup > h3 {
+}
+
+.fieldgroup > div {
+  display: flex;
+  flex-flow: row nowrap;
+  width: stretch;
+  height: fit-content;
+
+  /* border: var(--border-strong); */
+
+  & .field {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    width: 0; /* Fixes visual bug */
+    margin: 0;
+    padding: 0;
+
+    border-top: var(--border-strong);
+    border-bottom: var(--border-strong);
+    border-right: var(--border-primary);
+
+    &:first-child,
+    &.start {
+      border-left: var(--border-strong);
+    }
+    &:last-child,
+    &.end {
+      border-right: var(--border-strong);
+    }
+
+    &.start {
+      margin-left: var(--gap-size);
+    }
+
+    & input[type='text'] {
+      all: unset;
+      width: stretch;
+      height: calc(var(--base-size) * 2);
+
+      text-align: center;
+      border-bottom: var(--border-secondary);
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        background: var(--field-hover-color);
+        transition: background-color 300ms ease;
+      }
+    }
+
+    & button[type='roll'] {
+      width: stretch;
+      height: var(--base-size);
+      justify-content: center;
+    }
+
+    & span {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: var(--base-size);
+    }
+
+    & span::after {
+      content: none;
+    }
+  }
+}

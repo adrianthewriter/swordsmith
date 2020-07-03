@@ -1,0 +1,82 @@
+.toggle {
+  display: flex;
+  flex-flow: row nowrap;
+  width: fit-content;
+  height: var(--base-size);
+  margin: 0;
+  padding: 0;
+
+  & input[type='checkbox'] {
+    all: unset;
+    flex: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-right: -100%;
+
+    opacity: 0;
+    cursor: pointer;
+
+    & + span {
+      all: unset;
+      flex: none;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      color: inherit;
+      font: 14px var(--font-body);
+
+      cursor: pointer;
+    }
+
+    & + span::before,
+    & + span::after {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      height: stretch;
+      margin-right: 3px;
+
+      font: 16px var(--font-body);
+      text-transform: none;
+    }
+
+    & + span::before {
+      content: '□';
+      top: -2px;
+    }
+
+    &:checked + span::before {
+      content: '■';
+      top: -2px;
+    }
+  }
+}
+
+.collapse {
+  width: var(--base-size);
+
+  & input[type='checkbox'] {
+    & + span::before,
+    &:checked + span::before {
+      content: none;
+    }
+
+    & + span::after,
+    &:checked + span::after {
+      content: '−';
+      width: var(--base-size);
+      margin-right: 0;
+      font: 20px var(--font-mono);
+    }
+
+    &:checked + span::after {
+      content: '+';
+    }
+  }
+}

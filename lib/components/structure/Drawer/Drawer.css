@@ -1,0 +1,12 @@
+.root input.toggle[name*='-toggle'][value='hidden'] + .drawer {
+  display: none;
+}
+
+.drawer {
+  flex: none;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: stretch;
+  min-height: var(--base-size);
+}
