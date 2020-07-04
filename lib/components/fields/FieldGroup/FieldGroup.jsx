@@ -8,28 +8,32 @@ import styles from './FieldGroup.css'
 const InnerField = ({ groupId, index, id, label, roll, ...props }) => {
   id = id ? id : `${groupId}-${index + 1}`
 
-  return (
-    <label
-      title={props.tooltip ? props.tooltip : null}
-      className={
-        c(
-          styles.field,
-          props.start && styles.start,
-          props.end && styles.end,
-          props.className
-        ) || null
-      }
-    >
-      <Field id={id} {...props} />
-      {roll ? (
-        <Button id={id} roll={roll}>
-          {label}
-        </Button>
-      ) : (
-        <span>{label}</span>
-      )}
-    </label>
-  )
+  if (props.hidden) {
+    return <Field id={id} {...props} />
+  } else {
+    return (
+      <label
+        title={props.tooltip ? props.tooltip : null}
+        className={
+          c(
+            styles.field,
+            props.start && styles.start,
+            props.end && styles.end,
+            props.className
+          ) || null
+        }
+      >
+        <Field id={id} {...props} />
+        {roll ? (
+          <Button id={id} roll={roll}>
+            {label}
+          </Button>
+        ) : (
+          <span>{label}</span>
+        )}
+      </label>
+    )
+  }
 }
 
 const FieldGroup = ({ id: groupId, label: groupLabel, ...groupProps }) => {
