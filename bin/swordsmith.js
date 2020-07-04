@@ -11,9 +11,10 @@ const scriptIndex = args.findIndex(
 )
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex]
 
-const swordsmithPath = fs.existsSync(process.cwd(), 'node_modules/swordsmith')
-  ? path.resolve(process.cwd(), 'node_modules/swordsmith')
-  : path.resolve(process.cwd(), 'node_modules/@adrianthewriter/swordsmith')
+const swordsmithPath = path.resolve(
+  process.cwd(),
+  'node_modules/@adrianthewriter/swordsmith'
+)
 
 switch (script) {
   case 'build':
