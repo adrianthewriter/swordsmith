@@ -17,6 +17,16 @@ label.field {
     margin-top: -1px; /* Fix a visual bug */
   }
 
+  & span.sep {
+    all: unset;
+    flex: none;
+    width: fit-content;
+
+    &::after {
+      content: none;
+    }
+  }
+
   & span + span {
     all: unset;
 
@@ -27,7 +37,8 @@ label.field {
 }
 
 input[type='text'].field,
-textarea.field {
+textarea.field,
+select.field {
   all: unset;
   flex: 1;
   width: stretch;

@@ -22,14 +22,28 @@ const StaticField = ({ id, value, ...props }) => (
   </span>
 )
 
-const TextField = ({ id, value, placeholder, ...props }) => (
-  <input
-    type="text"
-    name={`attr_${id}`}
-    value={value}
-    placeholder={placeholder}
-    className={c(styles.field, props.className) || null}
-  />
+const TextField = ({ id, value, placeholder, list, hasMax, ...props }) => (
+  <>
+    <input
+      type="text"
+      name={`attr_${id}`}
+      value={value}
+      placeholder={placeholder}
+      className={c(styles.field, props.className) || null}
+    />
+    {hasMax && (
+      <>
+        <span className={styles.sep}>/</span>
+        <input
+          type="text"
+          name={`attr_${id}_max`}
+          value={value}
+          placeholder={placeholder}
+          className={c(styles.field, props.className) || null}
+        />
+      </>
+    )}
+  </>
 )
 
 const TextBox = ({ id, value, placeholder, ...props }) => (
@@ -39,6 +53,18 @@ const TextBox = ({ id, value, placeholder, ...props }) => (
     placeholder={placeholder}
     className={c(styles.field, props.className) || null}
   />
+)
+
+const SelectBox = ({ id, options, ...props }) => (
+  <select
+    name={`attr_${id}`}
+    className={c(styles.field, props.className) || null}
+  >
+    {options &&
+      options.map((op) => (
+        <option value={op.toLowerCase().replace(' ', '-')}>{op}</option>
+      ))}
+  </select>
 )
 
 const MetaBox = ({ id, value, placeholder, ...props }) => (
@@ -59,8 +85,12 @@ const InnerField = ({ hidden, displayOnly, type, ...props }) => {
     return <TextField {...props} />
   } else if (type === 'textbox') {
     return <TextBox {...props} />
+  } else if (type === 'select') {
+    return <SelectBox {...props} />
   } else if (type === 'metabox') {
     return <MetaBox {...props} />
+  } else {
+    return null
   }
 }
 
@@ -88,7 +118,7 @@ const Field = ({ id, label, ...props }) => {
 
 Field.propTypes = {
   id: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['text', 'textbox', 'metabox']),
+  type: PropTypes.oneOf(['text', 'textbox', 'select', 'metabox']),
 }
 
 Field.defaultProps = {

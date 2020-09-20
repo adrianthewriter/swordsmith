@@ -11,13 +11,17 @@ const Table = ({ id, repeat, header, ...props }) => (
     {header && (
       <div className={styles.tableheader}>
         {header.map((item, index) => {
-          switch (item) {
+          const isObj = typeof item === 'object'
+          const tooltip = isObj ? item.tooltip : null
+          const label = isObj ? item.label : item
+
+          switch (label) {
             case '<roll>':
               return <span className={styles.roll} />
             case '<view>':
               return <span className={styles.view} />
             default:
-              return <span>{item}</span>
+              return <span title={tooltip}>{label}</span>
           }
         })}
       </div>
